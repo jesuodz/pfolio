@@ -1,0 +1,31 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jesus Ordosgoitty",
+  "scripts": {
+    "clean": "rimraf build",
+    "build:images": "mkdirp build && node scripts/minify-images.js",
+    "build:css": "cleancss -o build/main.css src/css/main.css",
+    "build:html": "node scripts/compile-pug.js",
+    "build": "run-s build:*",
+    "watch:images": "onchange \"src/assets/*.{jpg,png}'\" -- run-s build:images",
+    "watch:css": "onchange \"src/css/*.css\" -- run-s build:css",
+    "watch:html": "onchange \"src/**/*.pug\" -- run-s build:html",
+    "serve": "browser-sync start --server \"build/\" --files \"build/main.css, build/index.html",
+    "watch": "run-p serve watch:*",
+    "postinstall": "run-s build watch"
+  },
+  "keywords": ["portfolio-template", "pug"],
+  "author": "Jesus Ordosgoitty",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "clean-css-cli": "^4.2.1",
+    "imagemin": "^6.1.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "pug": "^2.0.3",
+    "rimraf": "^2.6.3"
+  }
+}

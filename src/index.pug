@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html( lang= (meta.lang) ? meta.lang : "en" )
+  head
+    meta( http-equiv="Content-Type" content="text/html; charset=utf-8" )
+    meta( name="viewport" content="width=device-width, initial-scale=1" )
+    if (meta.icon)
+      link( rel= "icon" type= "image/png" sizes= "32x32" href= meta.icon )
+    title= (meta.title) ? meta.title : "Error - Title not found"
+    meta( name="description" content= (meta.description) ? meta.description : "Description not found" )
+    // OpenGraph meta
+    meta( property= "og:title" content= (meta.title) ? meta.title : "Error - Title not found" )
+    meta( property= "og:type" content= "website" )
+    if (meta.og_img)
+      meta( property= "og:image" content= meta.og_img )
+    meta( property= "og:description" content= (meta.og_description) ? meta.og_description : "Description not found" ) 
+    // Twitter meta tags
+    if (meta.twitter)
+      meta( name="twitter:card" content="summary_large_image" )
+      meta( name="twitter:site" content= meta.twitter )
+      meta( name="twitter:creator" content= meta.twitter )
+    // Stylesheets
+    link( href="main.css", rel="stylesheet")
+  body
+    header.container.header
+      a(href="#home" class="header-name")= name
+      nav.container.header-nav
+        a(href="#about" class="header-navlink") about
+        a(href="#work" class="header-navlink") work
+        a(href="#contact" class="header-navlink") contact
+
+    main.content
+      section#home.home(style="background-image: url(" + images.background + ")")
+      section#about
+      section#work
+      section#contact
+
+    footer
