@@ -22,14 +22,14 @@ html( lang= (meta.lang) ? meta.lang : "en" )
     link( href="main.css", rel="stylesheet")
   body
     header.container.header
-      a(href="#home" class="header-name")= name
+      a(href="#" class="header-name")= name
       nav.container.header-nav
         a(href="#about" class="header-navlink") about
         a(href="#work" class="header-navlink") work
         a(href="#contact" class="header-navlink") contact
 
     main.main
-      section.main-section#home.home(style="background-image: url(" + images.background + ")")
+      section.main-section.home(style="background-image: url(" + images.background + ")")
       section.main-section#about.about
         p About
       section.main-section#work.work

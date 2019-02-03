@@ -124,4 +124,7 @@ body {
   .home {
     background-attachment: fixed;
   }
+  .about, .contact {
+    height: 80vh;
+  }
 }
