@@ -29,7 +29,7 @@
 }
 
 html, body {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -38,15 +38,21 @@ body {
   font-weight: 400;
   vertical-align: baseline;
   color: var(--light-color);
+  overflow-x: hidden;
 }
 
 /* GRID */
 .container {
   display: flex;
 }
-.content {
-  height: inherit;
+.main {
+  position: relative;
+  z-index: 2;
+  background-color: var(--light-color);
+  margin-bottom: auto;
 }
+
+/* NAVIGATION */
 .header {
   position: fixed;
   width: 100%;
@@ -75,10 +81,47 @@ body {
       z-index: inherit;
     }
 
-.home {
+/* SECTIONS */
+.main-section {
+  height: 100vh;
+  z-index: inherit;
+}
+  .home {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+  }
+  .about, .contact {
+    color: var(--dark-color);
+  }
+  .work {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+  }
+
+/* FOOTER */
+.footer {
   position: relative;
-  height: inherit;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  bottom: 0;
+  left: 0;
+  height: 250px;
+  width: 100%;
+  background-color: var(--dark-color);
+  color: inherit;
+  z-index: 1;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+  .main {
+    margin-bottom: 250px;
+  }
+  .footer {
+    position: fixed;
+    padding-top: 4em;
+  }
+  .home {
+    background-attachment: fixed;
+  }
 }

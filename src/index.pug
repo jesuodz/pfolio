@@ -28,10 +28,14 @@ html( lang= (meta.lang) ? meta.lang : "en" )
         a(href="#work" class="header-navlink") work
         a(href="#contact" class="header-navlink") contact
 
-    main.content
-      section#home.home(style="background-image: url(" + images.background + ")")
-      section#about
-      section#work
-      section#contact
+    main.main
+      section.main-section#home.home(style="background-image: url(" + images.background + ")")
+      section.main-section#about.about
+        p About
+      section.main-section#work.work
+        p Work
+      section.main-section#contact.contact
+        p Contact
 
-    footer
+    footer.footer
+      p AAAAAAAAAAAh
