@@ -21,12 +21,13 @@ html( lang= (meta.lang) ? meta.lang : "en" )
     // Stylesheets
     link( href="main.css", rel="stylesheet")
   body
-    header.container.header
-      a(href="#home" class="header-name")= name
-      nav.container.header-nav
-        a(href="#about" class="header-navlink") about
-        a(href="#work" class="header-navlink") work
-        a(href="#contact" class="header-navlink") contact
+    header.flex.header
+      a(href="#home" class="header-brand")= name
+      nav.header-nav
+        div.flex.menu
+          a(href="#about" class="header-navlink") about
+          a(href="#work" class="header-navlink") work
+          a(href="#contact" class="header-navlink") contact
 
     main.content
       section#home.home(style="background-image: url(" + images.background + ")")

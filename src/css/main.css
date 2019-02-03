@@ -41,16 +41,14 @@ body {
 }
 
 /* GRID */
-.container {
+.flex {
   display: flex;
-}
-.content {
-  height: inherit;
 }
 .header {
   position: fixed;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
   margin: 0;
   text-transform: uppercase;
@@ -58,27 +56,45 @@ body {
   font-size: 1.05rem;
   z-index: 10;
 }
-  .header-name {
+  .menu {
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 11;
+    background: var(--dark-color);
+    opacity: 0.94;
+  }
+  .header-brand, .header-navlink {
     text-decoration: none;
     padding: 1rem;
     color: inherit;
     z-index: inherit;
   }
-  .header-nav {
-    align-items: center;
+  .header-navlink {
+    margin-left : 0.3rem;
   }
-    .header-navlink {
-      margin-left : 0.3rem;
-      text-decoration: none;
-      padding: 1rem;
-      color: inherit;
-      z-index: inherit;
-    }
 
+.content, section {
+  height: inherit;
+}
 .home {
   position: relative;
-  height: inherit;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-width: 600px) {
+  .menu {
+    position: unset;
+    background: inherit;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 100%;
+  }
 }
