@@ -82,22 +82,39 @@ body {
     }
 
 /* SECTIONS */
-.main-section {
-  height: 100vh;
+.main > section {
   z-index: inherit;
+  min-height: 30rem;
 }
   .home {
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: scroll;
+    background-color: var(--dark-color);
   }
-  .about, .contact {
+  .about, .work, .writing {
+    padding: 2rem;
+  }
+  .section--light {
     color: var(--dark-color);
   }
-  .work {
+  .section--dark {
     background-color: var(--dark-color);
     color: var(--light-color);
+  }
+  .writings {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+  }
+  .writing-post {
+    padding: 2rem;
+  }
+  .center {
+    flex: 1 100%;
+    text-align: center;
   }
 
 /* FOOTER */
@@ -105,26 +122,24 @@ body {
   position: relative;
   bottom: 0;
   left: 0;
-  height: 250px;
+  height: 150px;
   width: 100%;
   background-color: var(--dark-color);
   color: inherit;
   z-index: 1;
+
 }
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
   .main {
-    margin-bottom: 250px;
+    margin-bottom: 150px;
   }
   .footer {
     position: fixed;
-    padding-top: 4em;
+    padding-top: 2em;
   }
   .home {
     background-attachment: fixed;
-  }
-  .about, .contact {
-    height: 80vh;
   }
 }
