@@ -53,16 +53,16 @@ html( lang= (meta.lang) ? meta.lang : "en" )
         h2 My work
         each project in works
           section.project
-            div.project-description
-              p= description
-            div
+            div.project-title
               h3= project.name
-            div.image
+            div.project-description
+              p= project.description
+            div.project-image
               img(src=project.image)
             if(project.links)
-              each href, link in project.links
-                a.link( href=href )= link
-
+              div.project-links
+                each href, link in project.links
+                  a.link( href=href )= link
 
       if (writings)
         section.container.writings.section--light#writings

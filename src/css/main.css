@@ -129,9 +129,7 @@ p {
   .about {
     flex-direction: column;
     align-items: center;
-    font-weight: 300;
     padding: 3rem 1.75rem;
-    height: unset;
   }
     .about-title,
     .about-social {
@@ -153,7 +151,34 @@ p {
       order: 3;
       text-align: justify;
       flex: 2 0 65%;
+      font-weight: 300;
     }
+  .work {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.75rem;
+  }
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      .project-title,
+      .project-links {
+        flex: 1 0 100%;
+      }
+      .project-description,
+      .project-image {
+        flex: 1 0 50%;
+      }
+        .project-description {
+          font-weight: 300;
+          text-align: justify;
+        }
+        .project-image img {
+          height: auto;
+          width: 100%;
+        }
   .writings {
     flex-flow: row wrap;
     justify-content: center;
@@ -212,6 +237,9 @@ p {
     align-items: center;
     padding-left: 4rem;
     padding-right: 1.7rem;
+  }
+  .project {
+    flex-flow: row wrap;
   }
   .footer {
     position: fixed;
