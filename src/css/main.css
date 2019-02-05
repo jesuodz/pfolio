@@ -52,6 +52,39 @@ body {
   margin-bottom: auto;
 }
 
+/* TYPOGRAPHY */
+h1 {
+  font-size: 2.25rem;
+}
+h2 {
+  font-size: 1.73rem;
+}
+h3 {
+  font-size: 1.22rem;
+}
+p {
+  font-size: 1.10rem;
+}
+.social-link,
+.link {
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1.10rem;
+}
+  .link a:first-letter {
+    text-transform: uppercase;
+  }
+  .social-icon {
+    font-size: 2.1rem;
+    padding: 0 0.47rem;
+  }
+  .footer .social-icon {
+    color: var(--light-color);
+  }
+  .about-social .social-icon {
+    color: var(--dark-color);
+  }
+
 /* NAVIGATION */
 .header {
   position: fixed;
@@ -84,7 +117,6 @@ body {
 /* SECTIONS */
 .main > section {
   z-index: inherit;
-  min-height: 30rem;
 }
   .home {
     height: 100vh;
@@ -94,8 +126,45 @@ body {
     background-attachment: scroll;
     background-color: var(--dark-color);
   }
-  .about, .work, .writing {
-    padding: 2rem;
+  .about {
+    flex-direction: column;
+    align-items: center;
+    font-weight: 300;
+    padding: 3rem 1.75rem;
+    height: unset;
+  }
+    .about-title,
+    .about-social {
+      flex: 1 0 100%;
+    }
+      .about-title {
+        order: 1;
+      }      
+      .about-social {
+        order: 4;
+      }
+    .about-photo {
+      order: 2;
+      padding: 1.8rem 0.3rem 1.8rem 1.8rem;
+      text-align: center;
+      flex: 1 0 35%;
+    }
+    .about-bio {
+      order: 3;
+      text-align: justify;
+      flex: 2 0 65%;
+    }
+  .writings {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+    .writing-post {
+      padding: 2rem;
+    }
+  .center {
+    flex: 1 100%;
+    text-align: center;
   }
   .section--light {
     color: var(--dark-color);
@@ -104,22 +173,14 @@ body {
     background-color: var(--dark-color);
     color: var(--light-color);
   }
-  .writings {
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: center;
-  }
-  .writing-post {
-    padding: 2rem;
-  }
-  .center {
-    flex: 1 100%;
-    text-align: center;
-  }
 
 /* FOOTER */
 .footer {
+  flex-flow: row wrap;
   position: relative;
+  justify-content: space-around;
+  align-items: center;
+  padding: 3rem 2rem;
   bottom: 0;
   left: 0;
   height: 150px;
@@ -127,19 +188,37 @@ body {
   background-color: var(--dark-color);
   color: inherit;
   z-index: 1;
-
 }
+  .credits {
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
+  .credits p:first-letter {
+    text-transform: capitalize;
+  }
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
   .main {
     margin-bottom: 150px;
   }
+  .home {
+    background-attachment: fixed;
+  }
+  .about {
+    flex-flow: row-reverse wrap;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 1.7rem;
+  }
   .footer {
     position: fixed;
     padding-top: 2em;
   }
-  .home {
-    background-attachment: fixed;
-  }
+    .credits {
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
 }

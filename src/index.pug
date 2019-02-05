@@ -34,13 +34,35 @@ html( lang= (meta.lang) ? meta.lang : "en" )
     main.main
       section.home.section--dark(style="background-image: url(" + images.background + ")")
 
-      section.about.section--light#about
-        p About
+      section.container.about.section--light#about
+        div.about-title
+          h2 About me
+        if(about.profile_photo)
+          div.about-photo
+            img(src=about.profile_photo)
+        div.about-bio
+          each paragraph in about.bio
+            p= paragraph
+        if(about.show_social && social)
+          div.container.about-social
+            each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
 
       section.work.section--dark#work
+        h2 My work
         each project in works
           section.project
-            h3= project.name
+            div.project-description
+              p= description
+            div
+              h3= project.name
+            div.image
+              img(src=project.image)
+            if(project.links)
+              each href, link in project.links
+                a.link( href=href )= link
+
 
       if (writings)
         section.container.writings.section--light#writings
@@ -52,10 +74,15 @@ html( lang= (meta.lang) ? meta.lang : "en" )
                 h3= post.title
               p= post.summary
 
+    if(get_in_touch)
+      section.container.get-in-touch
+
+
     footer.footer.container
       if (social)
-      div.container
-        each val, key in social
-            a(href= val)
-              i(class="fab fa-" + key)
-      p= credits
+        div.container.social
+          each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
+      div.credits
+        span= credits
