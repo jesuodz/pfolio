@@ -19,6 +19,8 @@ html( lang= (meta.lang) ? meta.lang : "en" )
       meta( name="twitter:site" content= meta.twitter )
       meta( name="twitter:creator" content= meta.twitter )
     // Stylesheets
+    link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous" )
+    link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous" )
     link( href="main.css", rel="stylesheet")
   body
     header.container.header
@@ -26,16 +28,63 @@ html( lang= (meta.lang) ? meta.lang : "en" )
       nav.container.header-nav
         a(href="#about" class="header-navlink") about
         a(href="#work" class="header-navlink") work
-        a(href="#contact" class="header-navlink") contact
+        if (writings)
+          a(href="#writings" class="header-navlink") writings
 
     main.main
-      section.main-section.home(style="background-image: url(" + images.background + ")")
-      section.main-section#about.about
-        p About
-      section.main-section#work.work
-        p Work
-      section.main-section#contact.contact
-        p Contact
+      section.home.section--dark(style="background-image: url(" + images.background + ")")
 
-    footer.footer
-      p AAAAAAAAAAAh
+      section.container.about.section--light#about
+        div.about-title
+          h2 About me
+        if(about.profile_photo)
+          div.about-photo
+            img(src=about.profile_photo)
+        div.about-bio
+          each paragraph in about.bio
+            p= paragraph
+        if(about.show_social && social)
+          div.container.about-social
+            each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
+
+      section.work.section--dark#work
+        h2 My work
+        each project in works
+          section.project
+            div
+              div.project-title
+                h3= project.name
+              div.project-description
+                p= project.description
+              if(project.links)
+              div.project-links.container
+                each href, link in project.links
+                  a.project-link( href=href )= link
+            div
+              div.project-image
+                img(src=project.image)
+
+      if (writings)
+        section.container.writings.section--light#writings
+          div.writings-title
+            h2 My lates blog posts
+          each post in writings
+            div.writings-post
+              a.post-link(href= post.link target="_blank")
+                h3= post.title
+              p.post-summary= post.summary
+
+    if(get_in_touch)
+      section.container.get-in-touch
+
+
+    footer.footer.container
+      if (social)
+        div.container.social
+          each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
+      div.credits
+        span= credits
