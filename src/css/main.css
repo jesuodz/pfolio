@@ -66,13 +66,21 @@ p {
   font-size: 1.10rem;
 }
 .social-link,
-.link {
+.project-link {
   text-decoration: none;
   padding: 1rem;
-  font-size: 1.10rem;
+  font-size: 1.1rem;
 }
-  .link a:first-letter {
+  .project-link {
+    text-align: center;
     text-transform: uppercase;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: 1px solid var(--light-color);
+    border-radius: 1px;
+    font-size: 0.9rem;
+    padding: 0.75rem 0.63rem;
+    margin: 0.3rem;
   }
   .social-icon {
     font-size: 2.1rem;
@@ -162,18 +170,25 @@ p {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 1.45rem;
     }
-      .project-title,
-      .project-links {
-        flex: 1 0 100%;
+      .project > div {
+        margin-bottom: 1.85rem;
+        height: auto;
       }
-      .project-description,
-      .project-image {
-        flex: 1 0 50%;
-      }
+        .project > div:first-child { 
+          word-wrap: break-word;
+        }
         .project-description {
           font-weight: 300;
-          text-align: justify;
+          margin-top: 0.7rem;
+          margin-bottom: 0.3rem;
+        }
+        .project-links {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          /*height: 1.1rem;*/
         }
         .project-image img {
           height: auto;
@@ -239,7 +254,10 @@ p {
     padding-right: 1.7rem;
   }
   .project {
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
+  }
+  .project > div {
+    padding: 0 1.35rem;
   }
   .footer {
     position: fixed;
@@ -249,4 +267,23 @@ p {
       letter-spacing: 1px;
       font-size: 0.9rem;
     }
+}
+@media (min-width: 945px) {
+  .about {
+    padding: 3.75rem 5.87rem;
+  }
+  .project {
+    padding: 0 2.1rem;
+    text-align: justify;
+  }
+    .project > div {
+      flex: 1;
+    }
+    .project-links {
+      margin-top: 2.45rem;
+      justify-content: space-around;
+    }
+      .project-link {
+        padding: 1rem 1.35rem;
+      }
 }
