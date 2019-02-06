@@ -25,7 +25,8 @@
 
 :root {
   --light-color: #fcfffc;
-  --dark-color: #2d3a3a;
+  --primary-dark-color: #2d3a3a;
+  --secondary-dark-color: #535d5d;
 }
 
 html, body {
@@ -74,7 +75,7 @@ p {
   .project-link {
     text-align: center;
     text-transform: uppercase;
-    background-color: var(--dark-color);
+    background-color: var(--primary-dark-color);
     color: var(--light-color);
     border: 1px solid var(--light-color);
     border-radius: 1px;
@@ -90,7 +91,7 @@ p {
     color: var(--light-color);
   }
   .about-social .social-icon {
-    color: var(--dark-color);
+    color: var(--primary-dark-color);
   }
 
 /* NAVIGATION */
@@ -132,7 +133,7 @@ p {
     background-position: center;
     background-size: cover;
     background-attachment: scroll;
-    background-color: var(--dark-color);
+    background-color: var(--primary-dark-color);
   }
   .about {
     flex-direction: column;
@@ -188,7 +189,6 @@ p {
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          /*height: 1.1rem;*/
         }
         .project-image img {
           height: auto;
@@ -197,20 +197,42 @@ p {
   .writings {
     flex-flow: row wrap;
     justify-content: center;
-    align-items: baseline;
+    text-align: left;
+    padding: 0.3rem 0 2.17rem 0.3rem;
   }
-    .writing-post {
-      padding: 2rem;
+    .writings-title {
+      flex: 1 100%;
+      padding-top: 1.15rem;
+      padding-left: 1.3rem;
     }
+    .writings-post {
+      padding-top: 1.55rem;
+      padding-left: 1.3rem;
+      width: 100%;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+      .post-link {
+        color: inherit;
+      }
+        .post-link:hover {
+          color: var(--secondary-dark-color);
+        }
+      .post-summary {
+        font-weight: 300;
+      }
+        .post-summary:first-letter {
+          text-transform: capitalize;
+        }
   .center {
     flex: 1 100%;
     text-align: center;
   }
   .section--light {
-    color: var(--dark-color);
+    color: var(--primary-dark-color);
   }
   .section--dark {
-    background-color: var(--dark-color);
+    background-color: var(--primary-dark-color);
     color: var(--light-color);
   }
 
@@ -225,7 +247,7 @@ p {
   left: 0;
   height: 150px;
   width: 100%;
-  background-color: var(--dark-color);
+  background-color: var(--primary-dark-color);
   color: inherit;
   z-index: 1;
 }
@@ -259,6 +281,15 @@ p {
   .project > div {
     padding: 0 1.35rem;
   }
+  .writings {
+    
+  }
+    .writings-post {
+      width: auto;
+      flex: 1 50%;
+      padding-right: 1rem;
+      word-wrap: break-word;
+    }
   .footer {
     position: fixed;
     padding-top: 2em;
@@ -286,4 +317,7 @@ p {
       .project-link {
         padding: 1rem 1.35rem;
       }
+  .writings {
+    padding: 2.75rem 4rem 3.75rem 4rem;
+  }
 }
