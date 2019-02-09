@@ -23,18 +23,19 @@ html( lang= (meta.lang) ? meta.lang : "en" )
     link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous" )
     link( href="main.css", rel="stylesheet")
   body
-    header.container.header
-      a(href="#" class="header-name")= name
-      nav.container.header-nav
-        a(href="#about" class="header-navlink") about
-        a(href="#work" class="header-navlink") work
-        if (writings)
-          a(href="#writings" class="header-navlink") writings
+    header.flex.header
+      a(href="#" class="header-brand")= name
+      nav.header-nav
+        div.flex.menu
+          a(href="#about" class="header-navlink") about
+          a(href="#work" class="header-navlink") work
+          if (writings)
+            a(href="#writings" class="header-navlink") writings
 
     main.main
       section.home.section--dark(style="background-image: url(" + images.background + ")")
 
-      section.container.about.section--light#about
+      section.flex.about.section--light#about
         div.about-title
           h2 About me
         if(about.profile_photo)
@@ -44,7 +45,7 @@ html( lang= (meta.lang) ? meta.lang : "en" )
           each paragraph in about.bio
             p= paragraph
         if(about.show_social && social)
-          div.container.about-social
+          div.flex.about-social
             each val, key in social
               a(href= val)
                 i.social-icon(class="fab fa-" + key)
@@ -59,7 +60,7 @@ html( lang= (meta.lang) ? meta.lang : "en" )
               div.project-description
                 p= project.description
               if(project.links)
-              div.project-links.container
+              div.project-links.flex
                 each href, link in project.links
                   a.project-link( href=href )= link
             div
@@ -67,7 +68,7 @@ html( lang= (meta.lang) ? meta.lang : "en" )
                 img(src=project.image)
 
       if (writings)
-        section.container.writings.section--light#writings
+        section.flex.writings.section--light#writings
           div.writings-title
             h2 My lates blog posts
           each post in writings
@@ -77,12 +78,12 @@ html( lang= (meta.lang) ? meta.lang : "en" )
               p.post-summary= post.summary
 
     if(get_in_touch)
-      section.container.get-in-touch
+      section.flex.get-in-touch
 
 
-    footer.footer.container
+    footer.footer.flex
       if (social)
-        div.container.social
+        div.flex.social
           each val, key in social
               a(href= val)
                 i.social-icon(class="fab fa-" + key)

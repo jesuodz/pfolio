@@ -43,7 +43,7 @@ body {
 }
 
 /* GRID */
-.container {
+.flex {
   display: flex;
 }
 .main {
@@ -99,6 +99,7 @@ p {
   position: fixed;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
   margin: 0;
   text-transform: uppercase;
@@ -106,21 +107,36 @@ p {
   font-size: 1.05rem;
   z-index: 10;
 }
-  .header-name {
-    text-decoration: none;
-    padding: 1rem;
-    color: inherit;
-    z-index: inherit;
-  }
-  .header-nav {
+  .menu {
+    flex-flow: column nowrap;
+    justify-content: space-around;
     align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 0%;
+    width: 0%;
+    z-index: 11;
+    background: var(--dark-color);
+    opacity: 0.9;
+    display: none;
   }
-    .header-navlink {
-      margin-left : 0.3rem;
+    .header-brand, .header-navlink {
       text-decoration: none;
       padding: 1rem;
       color: inherit;
       z-index: inherit;
+    }
+    .header-navlink {
+      height: calc(100% / 5);
+      font-size: 2.5rem;
+      margin-left : 0.3rem;
+      text-align: center;
+      flex: 1 auto;
+      padding: calc(100% / 5) 100%;
+    }
+    .header-navlink:hover {
+      background-color: black;
     }
 
 /* SECTIONS */
@@ -263,6 +279,24 @@ p {
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
+  .menu {
+    display: flex;
+    position: unset;
+    background: inherit;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+    .header-navlink {
+      font-size: 1.05rem;
+      line-height: normal;
+      padding: 0 1rem;
+    }
+      .header-navlink:hover,
+      .header-brand:hover {
+        opacity: 0.97;
+        background-color: unset;
+      }
   .main {
     margin-bottom: 150px;
   }
@@ -281,15 +315,12 @@ p {
   .project > div {
     padding: 0 1.35rem;
   }
-  .writings {
-    
+  .writings-post {
+    width: auto;
+    flex: 1 50%;
+    padding-right: 1rem;
+    word-wrap: break-word;
   }
-    .writings-post {
-      width: auto;
-      flex: 1 50%;
-      padding-right: 1rem;
-      word-wrap: break-word;
-    }
   .footer {
     position: fixed;
     padding-top: 2em;
