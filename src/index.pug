@@ -26,7 +26,11 @@ html( lang= (meta.lang) ? meta.lang : "en" )
     header.flex.header
       a(href="#" class="header-brand")= name
       nav.header-nav
-        div.flex.menu
+        div.flex.button#button
+          span.line
+          span.line
+          span.line
+        div.flex.menu#menu
           a(href="#about" class="header-navlink") about
           a(href="#work" class="header-navlink") work
           if (writings)
@@ -89,3 +93,5 @@ html( lang= (meta.lang) ? meta.lang : "en" )
                 i.social-icon(class="fab fa-" + key)
       div.credits
         span= credits
+  script(src="index.js")
+  
