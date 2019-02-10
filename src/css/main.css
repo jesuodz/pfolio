@@ -113,7 +113,14 @@ p {
   z-index: 10;
 /*  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
             box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);*/
+  transition: all 0.3s ease-in-out;
 }
+  .header--scroll {
+    background-color: var(--primary-dark-color);
+  }
+  .header--none {
+    background-color: none;
+  }
   .menu {
     flex-flow: column nowrap;
     justify-content: space-around;
