@@ -1,5 +1,4 @@
 const navbar = document.getElementById('header');
-const screenHeight = window.innerHeight;
 
 window.onscroll = function() {
   "use strict";

@@ -38,6 +38,9 @@ html( lang= (meta.lang) ? meta.lang : "en" )
 
     main.main
       section.home.section--dark(style="background-image: url(" + images.background + ")")
+        div.home-intro
+          h1.home-title= title
+          h2.home-subtitle= subtitle
 
       section.flex.about.section--light#about
         div.about-title
