@@ -1,3 +1,5 @@
+const navbar = document.getElementById('header');
+
 window.onscroll = function() {
   "use strict";
   if (document.documentElement.scrollTop >= window.innerHeight * 0.75  ||
