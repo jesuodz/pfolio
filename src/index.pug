@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+html( lang= (meta.lang) ? meta.lang : "en" )
+  head
+    meta( http-equiv="Content-Type" content="text/html; charset=utf-8" )
+    meta( name="viewport" content="width=device-width, initial-scale=1" )
+    if (meta.icon)
+      link( rel= "icon" type= "image/png" sizes= "32x32" href= meta.icon )
+    title= (meta.title) ? meta.title : "Error - Title not found"
+    meta( name="description" content= (meta.description) ? meta.description : "Description not found" )
+    // OpenGraph meta
+    meta( property= "og:title" content= (meta.title) ? meta.title : "Error - Title not found" )
+    meta( property= "og:type" content= "website" )
+    if (meta.og_img)
+      meta( property= "og:image" content= meta.og_img )
+    meta( property= "og:description" content= (meta.og_description) ? meta.og_description : "Description not found" ) 
+    // Twitter meta tags
+    if (meta.twitter)
+      meta( name="twitter:card" content="summary_large_image" )
+      meta( name="twitter:site" content= meta.twitter )
+      meta( name="twitter:creator" content= meta.twitter )
+    // Stylesheets
+    link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/brands.css" integrity="sha384-1KLgFVb/gHrlDGLFPgMbeedi6tQBLcWvyNUN+YKXbD7ZFbjX6BLpMDf0PJ32XJfX" crossorigin="anonymous" )
+    link( rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous" )
+    link( href="main.css", rel="stylesheet")
+  body
+    header.flex.header#header
+      a(href="#" class="header-brand")= brand
+      nav.header-nav
+        div.flex.button#button
+          span.line
+          span.line
+          span.line
+        div.flex.menu#menu
+          a(href="#about" class="header-navlink") about
+          a(href="#work" class="header-navlink") work
+          if (writings)
+            a(href="#writings" class="header-navlink") writings
+
+    main.main
+      section.home(style="background-image: url(" + images.background + ")")
+        div.home-intro
+          h1.home-title= title
+          h2.home-subtitle= subtitle
+
+      section.flex.about#about
+        div.about-title
+          h2 About me
+        if(about.profile_photo)
+          div.about-photo
+            img(src=about.profile_photo)
+        div.about-bio
+          each paragraph in about.bio
+            p= paragraph
+        if(about.show_social && social)
+          div.flex.about-social
+            each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
+
+      section.work#work
+        h2 My work
+        each project in works
+          section.project
+            div
+              div.project-title
+                h3= project.name
+              div.project-description
+                p= project.description
+              if(project.links)
+              div.project-links.flex
+                each href, link in project.links
+                  a.project-link( href=href target="_blank")= link
+            div
+              div.project-image
+                img(src=project.image)
+
+      if (writings)
+        section.flex.writings#writings
+          div.writings-title
+            h2 My lates blog posts
+          each post in writings
+            div.writings-post
+              a.post-link(href= post.link target="_blank")
+                h3= post.title
+              p.post-summary= post.summary
+
+    if(get_in_touch)
+      section.flex.get-in-touch
+
+
+    footer.footer.flex
+      if (social)
+        div.flex.social
+          each val, key in social
+              a(href= val)
+                i.social-icon(class="fab fa-" + key)
+      div.credits
+        span= credits
+  script(src="index.js")
+  
