@@ -37,12 +37,12 @@ html( lang= (meta.lang) ? meta.lang : "en" )
             a(href="#writings" class="header-navlink") writings
 
     main.main
-      section.home.section--dark(style="background-image: url(" + images.background + ")")
+      section.home(style="background-image: url(" + images.background + ")")
         div.home-intro
           h1.home-title= title
           h2.home-subtitle= subtitle
 
-      section.flex.about.section--light#about
+      section.flex.about#about
         div.about-title
           h2 About me
         if(about.profile_photo)
@@ -57,7 +57,7 @@ html( lang= (meta.lang) ? meta.lang : "en" )
               a(href= val)
                 i.social-icon(class="fab fa-" + key)
 
-      section.work.section--dark#work
+      section.work#work
         h2 My work
         each project in works
           section.project
@@ -69,13 +69,13 @@ html( lang= (meta.lang) ? meta.lang : "en" )
               if(project.links)
               div.project-links.flex
                 each href, link in project.links
-                  a.project-link( href=href )= link
+                  a.project-link( href=href target="_blank")= link
             div
               div.project-image
                 img(src=project.image)
 
       if (writings)
-        section.flex.writings.section--light#writings
+        section.flex.writings#writings
           div.writings-title
             h2 My lates blog posts
           each post in writings
