@@ -24,15 +24,13 @@
 }
 
 :root {
-  --primary-color: #2a4747;
-    --dark-primary-color: #022020;
-    --light-primary-color: #547272;
-  --secondary-color: #4e9da6;
-    --dark-secondary-color: #136e77;
-    --light-secondary-color: #80ced7;
+  --primary-color: #3f51b5;
+  --dark-primary-color: #263238;
+  --light-primary-color: #29b6f6;
+  --accent-color: #3d5afe;
   --text: #FFFFFF;
-    --primary-text: #212121;
-    --secondary-text: #c0c0c0;
+  --primary-text: #212121;
+  --secondary-text: #757575;
 }
 
 html,

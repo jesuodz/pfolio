@@ -39,22 +39,21 @@ p {
   .project-link {
     text-align: center;
     text-transform: uppercase;
-    background-color: var(--dark-secondary-color);
+    background-color: var(--accent-color);
     color: var(--text);
-    border-radius: 2px;
-    font-size: 0.9rem;
-    padding: 0.65rem 0.53rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.65rem 0.73rem;
     margin: 0.3rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 0.5px;
     transition: 0.3s;
-    -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, .5);
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .5);
   }
-
-    .project-link:hover {      
-      background-color: var(--secondary-color);
-      color: var(--primary-text);
+    .project-link:hover {
+      opacity: 0.8;
     }
   .social-icon {
     font-size: 2.1rem;
@@ -65,14 +64,14 @@ p {
     transition: 0.3s;
   }
     .footer .social-icon:hover {
-      color: var(--light-secondary-color);
+      color: var(--light-primary-color);
     }
   .about-social .social-icon {
-    color: var(--dark-secondary-color);
+    color: var(--accent-color);
     transition: 0.3s;
   }
     .about-social .social-icon:hover {
-      color: var(--secondary-color);
+      opacity: 0.9;
     }
 
 /* NAVIGATION */
@@ -132,17 +131,17 @@ p {
       transition: 0.5s;
     }
       .header-navlink:hover {
-        color: var(--light-secondary-color);
+        color: var(--light-primary-color);
       }
   .menu--active {
     height: 100vh;
     display: flex;
-    background-color: var(--secondary-color);
+    background-color: var(--dark-primary-color);
     color: var(--text);
     opacity: 0.97;
   }
     .menu--active .header-navlink:hover {
-      color: var(--primary-text);
+      color: var(--light-primary-color);
     }
   .button {
     flex-direction: column;
@@ -235,7 +234,7 @@ p {
       }
     .home .home-title::selection,
     .home .home-subtitle::selection {
-      background: var(--light-secondary-color);
+      background: var(--text);
       color: var(--primary-text);
     }
   .about {
@@ -270,7 +269,7 @@ p {
     .about .about-title h2::selection,
     .about .about-bio p::selection,
     .about .about-photo img::selection {
-      background: var(--dark-secondary-color);
+      background: var(--accent-color);
       color: var(--text);
     }
   .work {
@@ -312,7 +311,7 @@ p {
         .project .project-link::selection,
         .project .project-image img::selection {
           background: var(--dark-primary-color);
-          color: var(--light-secondary-color);
+          color: var(--text);
         }
 
   .writings {
@@ -320,7 +319,7 @@ p {
     justify-content: center;
     text-align: left;
     padding: 0.3rem 0 2.17rem 0.3rem;
-    background-color: var(--light-primary-color);
+    background-color: var(--accent-color);
     color: var(--text);
   }
     .writings-title {
@@ -341,11 +340,11 @@ p {
         transition: 0.3s;
       }
         .post-link:hover {
-          color: var(--secondary-text);
+          text-decoration: underline;
         }
       .post-summary {
         font-weight: 300;
-        color: var(--secondary-text);
+        color: var(--text);
       }
         .post-summary:first-letter {
           text-transform: capitalize;
@@ -354,7 +353,7 @@ p {
       .writings .writings-post .post-link::selection,
       .writings .writings-post .post-summary::selection {
         background: var(--dark-primary-color);
-        color: var(--light-secondary-color);
+        color: var(--text);
       }
 /* FOOTER */
 .footer {
@@ -367,7 +366,7 @@ p {
   left: 0;
   height: 150px;
   width: 100%;
-  background-color: var(--dark-primary-color);
+  background-color: var(--primary-color);
   color: var(--text);
   z-index: 1;
 }
@@ -381,7 +380,7 @@ p {
     text-transform: capitalize;
   }
   .credits span::selection {
-    background: var(--light-secondary-color);
+    background: var(--text);
     color: var(--primary-text);
   }
 
@@ -466,9 +465,6 @@ p {
       margin-top: 2.45rem;
       justify-content: space-around;
     }
-      .project-link {
-        padding: 1rem 1.35rem;
-      }
   .writings {
     padding: 2.75rem 4rem 3.75rem 4rem;
   }
