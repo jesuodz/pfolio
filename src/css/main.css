@@ -234,7 +234,7 @@ p {
       }
     .home .home-title::selection,
     .home .home-subtitle::selection {
-      background: var(--text);
+      background: var(--light-primary-color);
       color: var(--primary-text);
     }
   .about {
@@ -306,6 +306,7 @@ p {
           height: auto;
           width: 100%;
         }
+        .work h2::selection,
         .project .project-title h3::selection,
         .project .project-description p::selection, 
         .project .project-link::selection,
@@ -319,13 +320,14 @@ p {
     justify-content: center;
     text-align: left;
     padding: 0.3rem 0 2.17rem 0.3rem;
-    background-color: var(--accent-color);
-    color: var(--text);
+    background-color: var(--text);
+    color: var(--primary-text);
   }
     .writings-title {
       flex: 1 100%;
       padding-top: 1.15rem;
       padding-left: 1.3rem;
+      color: inherit;
     }
     .writings-post {
       padding-top: 1.55rem;
@@ -335,7 +337,7 @@ p {
       letter-spacing: 0.5px;
     }
       .post-link {
-        color: var(--text);
+        color: var(--primary-text);
         text-decoration: none;
         transition: 0.3s;
       }
@@ -344,15 +346,15 @@ p {
         }
       .post-summary {
         font-weight: 300;
-        color: var(--text);
+        color: var(--primary-text);
       }
         .post-summary:first-letter {
           text-transform: capitalize;
         }
       .writings .writings-title h2::selection,
-      .writings .writings-post .post-link::selection,
+      .writings .writings-post h3::selection,
       .writings .writings-post .post-summary::selection {
-        background: var(--dark-primary-color);
+        background: var(--primary-color);
         color: var(--text);
       }
 /* FOOTER */
@@ -371,10 +373,12 @@ p {
   z-index: 1;
 }
   .credits {
-    font-size: 0.8rem;
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1.5;
+    font-size: 0.9rem;
+    padding-top: 0.7rem;
+    text-align: center;
   }
   .credits span:first-letter {
     text-transform: capitalize;
