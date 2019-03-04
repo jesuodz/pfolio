@@ -1,0 +1,53 @@
+{
+  "brand": "Jesús Ordosgoitty",
+  "title": "Jesus Ordosgoitty",
+  "subtitle": "Freelance web developer",
+  "credits": "Designed and developed by Jesús Ordosgoitty",
+  "meta": {
+    "title": "Jesús Ordosgoitty • Web Developer",
+    "icon": "/assets/favicon-32x32.png",
+    "description": "Freelance web developer based in Venezuela. Likes to build pretty websites and great apps.",
+    "lang": "en",
+    "twitter": "@jesuodz"
+  },
+  "images": {
+    "background": "/assets/home.jpeg"
+  },
+  "about": {
+    "bio": [
+      "I am a web developer based in Carupano, Venezuela.",
+      "I love to solve problems as well as making things pretty and easy to use. I can't stop learning new things; the more, the better. In my free time, I enjoy to design and code interfaces, algorithm exercises and web development projects.",
+      "For the front-end I usually work with Javascript, either standalone or including a frammework like ReactJS. I also make the web pretty by using CSS and, whenever needed, use a design frammework like Bootstrap.",
+      "For the back-end I work with Javascript, Node.JS, Express and MongoDB."
+    ],
+    "profile_photo": "/assets/profile.png",
+    "show_social": false
+  },
+  "works": [
+    {
+      "name": "ShurtIt!",
+      "description": "Url Shortener microservice made with Node.js and MongoDB for the back-end, and vanilla CSS and Javascript in the front-end.",
+      "image": "/assets/shurtit.png",
+      "links": {
+        "live": "https://shurtit.glitch.me/",
+        "code": "https://github.com/jesuodz/shurtit"
+      }
+    }
+  ],
+  "writings": [
+    {
+      "title": "Building a Timestamp Microservice",
+      "summary": "one of my first backend projects",
+      "link": "https://medium.com/@jesuodz/building-a-timestamp-microservice-71a1645f09d9"
+    },
+    {
+      "title": "I lost my #100DaysOfCode streak… and my computer",
+      "link": "https://medium.com/@jesuodz/i-lost-my-100daysofcode-streak-and-my-computer-e965eaa6d336"
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/jesuodz",
+    "github": "https://github.com/jesuodz",
+    "twitter": "https://twitter.com/jesuodz"
+  }
+}
